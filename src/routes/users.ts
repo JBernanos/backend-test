@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 
-import { userInputDto } from "../dto/users";
 import { validationPipe, assemblyErrorArray } from "../services/validation/validation";
+import { userInputDto } from "../dto/users";
 import saveUser from "../services/users/saveUser";
 
 const router = Router();

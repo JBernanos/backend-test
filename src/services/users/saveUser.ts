@@ -13,6 +13,9 @@ export default async function (payload: userInputDto): Promise<userOutputDto> {
     return { status: 200, data: { message: "User created." } };
   } catch (error: any) {
     if (error.code == 23505) return { status: 409, data: { message: "User already exist." } };
-    else return { status: 500, data: { message: "Error while saving user." } };
+    else {
+      console.log(`(ERROR) - Error while saving user: ${error}`);
+      return { status: 500, data: { message: "Error while saving user." } };
+    };
   }
 }

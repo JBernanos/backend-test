@@ -1,8 +1,9 @@
 import express from "express";
 
 import { port, version } from "./config/api.json";
-import usersRoute from "./routes/users";
 import createTablesIfTheyNotExist from "./services/database/createTablesIfTheyNotExist";
+import usersRoute from "./routes/users";
+import colorsRoute from "./routes/colors";
 
 const app = express();
 
@@ -13,4 +14,5 @@ app.listen(port, async () => {
 
   app.use(express.json());
   app.use(`${version}/users`, usersRoute);
+  app.use(`${version}/colors`, colorsRoute);
 });
