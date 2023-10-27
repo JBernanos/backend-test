@@ -1,23 +1,32 @@
 import { IsString, IsNotEmpty } from "../services/validation/validation";
 
-export class userDto {
+export class userInputDto {
   @IsString()
   @IsNotEmpty()
-  name?: string;
+  name: string;
 
   @IsString()
   @IsNotEmpty()
-  document?: string;
+  document: string;
 
   @IsString()
   @IsNotEmpty()
-  email?: string;
+  email: string;
 
   @IsString()
   @IsNotEmpty()
-  favorite_color?: string;
+  favorite_color: string;
 
   @IsString()
   @IsNotEmpty()
-  comments?: string;
+  comments: string;
+}
+
+class Data {
+  message: string;
+}
+export class userOutputDto {
+  status: number;
+
+  data: Data;
 }
