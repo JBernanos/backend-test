@@ -12,9 +12,8 @@ router.post("", async (req: Request, res: Response) => {
   if (validationErrors.length > 0) res.status(400).send({ message: "Invalid payload.", errors: assemblyErrorArray(validationErrors) });
   else {
     const registeredColors = await getColors();
-    if (!registeredColors?.includes(req.body.favorite_color)) {
-      res.status(400).send({ message: `Invalid favorite_color, avaliable options are: ${registeredColors}` });
-    } else {
+    if (!registeredColors?.includes(req.body.favorite_color)) res.status(400).send({ message: `Invalid favorite_color, options are: ${registeredColors}` });
+    else {
       const { status, data } = await saveUser(req.body);
       res.status(status).send(data);
     }
