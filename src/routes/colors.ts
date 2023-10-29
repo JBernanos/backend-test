@@ -18,7 +18,7 @@ router.post("", async (req: Request, res: Response) => {
   if (validationErrors.length > 0) res.status(400).send({ message: "Invalid payload.", errors: assemblyErrorArray(validationErrors) });
   else {
     const registeredColors = await getColors();
-    if (registeredColors?.includes(req.body.name)) res.status(400).send({ message: "Color already registered." });
+    if (registeredColors?.includes(req.body.name)) res.status(409).send({ message: "Color already registered." });
     else {
       const { status, data } = await saveColor(req.body.name);
       res.status(status).send(data);
