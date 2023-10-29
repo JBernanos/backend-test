@@ -8,7 +8,9 @@
 ## **Introdução**
 
 Backend para um formulário de cadastro de usuários, é possível registrar usuários e cores, tendo em vista que as cores disponíveis para o campo **favorite_color** podem mudar, todos os dados são salvos em um banco de dados Postgres. <br>
-Como não foi citado, nenhum ORM foi utilizado.
+Como não foi citado, frameworks como Nestjs e ORMs como TypeORM/Prisma/Sequelize não foram utilizados. <br>
+
+**OBS: Por questões de praticidade o arquivo .env foi commitado nesse repositório.**
 
 ## **Instalação**
 
